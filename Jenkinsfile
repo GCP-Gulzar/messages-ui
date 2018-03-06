@@ -1,5 +1,8 @@
 def version="00.00.01"
 node{
+def nodeHome = tool name: 'node-8.4.0', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+env.PATH = "${nodeHome}/bin:${env.PATH}"
+
     stage('checkout'){
         echo 'Checking out source code...'
         deleteDir()
@@ -8,10 +11,11 @@ node{
     stage('build'){
         echo "Building app..."
         echo "node version : "
-        docker.image('node:4.1.2').inside {
         sh "node -v"
-        sh "ng build --prod"
-        docker.build('')
-        }
+        sh "npm install"
+        sh "npm run-script build"
+    }
+    stage('dockerize'){
+      
     }
 }
