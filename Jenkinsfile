@@ -17,4 +17,8 @@ def tag="us.gcr.io/gcp-automated-networks-196019/message-ui:${version}"
         sh "docker build -t ${tag} ."
         sh "gcloud docker -- push ${tag}"
     }
+    stage('deploy'){
+      sh "gcloud beta compute instance-groups managed rolling-action restart message-ui-instance-group2 \
+          --max-unavailable 2 --region us-east1"
+    }
 }
