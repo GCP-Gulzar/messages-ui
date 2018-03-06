@@ -2,7 +2,6 @@ def version="00.00.01"
 node{
     stage('checkout'){
         echo 'Checking out source code...'
-        deleteDir()
         checkout scm
     }
     stage('build'){
@@ -10,5 +9,9 @@ node{
         echo "node version : "
         sh 'npm install'
         sh 'ng build'
+    }
+    stage('dockerize'){
+        echo 'dockerizing image...'
+        sh 'docker -t message-ui:${version} .'
     }
 }
