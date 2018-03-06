@@ -1,5 +1,4 @@
 def version="00.00.01"
-env.PATH = "${nodeHome}/bin:${env.PATH}"
 
 node {
   agent {
