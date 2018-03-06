@@ -8,10 +8,6 @@ node{
     stage('build'){
         echo "Building app..."
         echo "node version : "
-        docker.image('node:4.1.2').inside {
-        sh "node -v"
-        sh "npm install -g @angular/cli"
         sh "npm run-script build"
-        }
     }
 }
