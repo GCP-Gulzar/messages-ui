@@ -1,7 +1,5 @@
 def version="00.00.01"
-pipeline{
-  agent any
-  stages{
+node{
     stage('checkout'){
       steps{
         echo 'Checking out source code...'
@@ -18,5 +16,4 @@ pipeline{
         docker.build('')
       }
     }
-  }
 }
