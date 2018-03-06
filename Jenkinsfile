@@ -19,4 +19,3 @@ pipeline{
     sh "ng build --prod"
   }
 }
-}
