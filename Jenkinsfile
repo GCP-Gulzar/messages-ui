@@ -12,6 +12,6 @@ def version="00.00.01"
     }
     stage('dockerize'){
         echo 'dockerizing image...'
-        sh 'docker -t message-ui:${version} .'
+        sh 'docker build -t message-ui:${version} .'
     }
 }
