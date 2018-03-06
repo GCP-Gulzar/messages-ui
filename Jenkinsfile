@@ -15,6 +15,7 @@ def tag="us.gcr.io/gcp-automated-networks-196019/message-ui:${version}"
     stage('dockerize'){
         echo 'dockerizing image...'
         sh "docker build -t ${tag} ."
-        sh "gcloud docker -- push ${tag}"
+        sh "curl https://sdk.cloud.google.com | bash"
+        sh "gcloud docker --push ${tag}"
     }
 }
