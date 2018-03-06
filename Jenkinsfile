@@ -8,11 +8,9 @@ node{
     stage('build'){
         echo "Building app..."
         echo "node version : "
+        docker.image('node:4.1.2').inside {
         sh "node -v"
-        sh "npm install"
         sh "npm run-script build"
-    }
-    stage('dockerize'){
-
+        }
     }
 }
