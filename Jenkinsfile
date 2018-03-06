@@ -1,5 +1,7 @@
 node{
 def version="00.00.01"
+def tag="us.gcr.io/gcp-automated-networks-196019/message-ui:${version}"
+
     stage('checkout'){
         echo 'Checking out source code...'
         checkout scm
@@ -8,10 +10,11 @@ def version="00.00.01"
         echo "Building app..."
         echo "node version : "
         sh 'npm install'
-        sh 'ng build'
+        sh 'ng build --prod'
     }
     stage('dockerize'){
         echo 'dockerizing image...'
-        sh "docker build -t message-ui:${version} ."
+        sh "docker build -t ${tag} ."
+        sh "gcloud docker -- push ${tag}"
     }
 }
