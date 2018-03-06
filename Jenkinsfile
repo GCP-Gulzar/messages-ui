@@ -8,6 +8,6 @@ node{
     stage('build'){
         echo "Building app..."
         echo "node version : "
-        sh "npm run-script build"
+        sh 'ng build'
     }
 }
