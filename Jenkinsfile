@@ -10,7 +10,9 @@ node {
   stage('build'){
     echo 'Building app...'
     echo 'node version : '
-    sh 'node -v'
-    sh 'ng build --prod'
+    docker.image('node:4.1.2').inside {
+      sh 'node -v'
+      sh 'ng build --prod'
+    }
   }
 }
