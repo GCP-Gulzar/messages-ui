@@ -1,5 +1,5 @@
-def version="00.00.01"
 node{
+def version="00.00.01"
     stage('checkout'){
         echo 'Checking out source code...'
         checkout scm
