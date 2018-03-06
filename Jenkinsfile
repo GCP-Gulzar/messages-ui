@@ -1,5 +1,6 @@
 def version="00.00.01"
 pipeline{
+  agent any
   stages{
     stage('checkout'){
       steps{
@@ -14,6 +15,7 @@ pipeline{
         echo "node version : "
         sh "node -v"
         sh "ng build --prod"
+        docker.build('')
       }
     }
   }
