@@ -8,15 +8,19 @@ pipeline{
   }
   stages{
     stage('checkout'){
-      echo 'Checking out source code...'
-      deleteDir()
-      checkout scm
+      steps{
+        echo 'Checking out source code...'
+        deleteDir()
+        checkout scm
       }
+    }
     stage('build'){
-      echo "Building app..."
-      echo "node version : "
-      sh "node -v"
-      sh "ng build --prod"
+      steps{
+        echo "Building app..."
+        echo "node version : "
+        sh "node -v"
+        sh "ng build --prod"
+      }
     }
   }
 }
