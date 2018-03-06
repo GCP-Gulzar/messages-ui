@@ -1,7 +1,27 @@
+def version="00.00.01"
+
 node {
-    stage('Checkout') {
-        //disable to recycle workspace data to save time/bandwidth
-        deleteDir()
-        checkout scm
+
+    def function build(){
+
+    checkout()
+    compile()
+    dockerize()
+    test()
+    deploy()
+
     }
+
+    def checkout(){
+      stage('checkout'){
+      deleteDir()
+      checkout scm
+      }
+    }
+
+    def dockerize(){
+
+    }
+
+
 }
