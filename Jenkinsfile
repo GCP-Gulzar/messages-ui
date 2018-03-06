@@ -1,25 +1,16 @@
 def version="00.00.01"
 
 node {
+  stage('checkout'){
+    echo 'Checking out source code...'
+    deleteDir()
+    checkout scm
+  }
 
-    def build(){
-      checkout()
-      compile()
-      dockerize()
-      test()
-      deploy()
-    }
-
-    def checkout(){
-      stage('checkout'){
-      deleteDir()
-      checkout scm
-      }
-    }
-
-    def dockerize(){
-
-    }
-
-
+  stage('build'){
+    echo 'Building app...'
+    echo 'node version : '
+    sh 'node -v'
+    sh 'ng build --prod'
+  }
 }
