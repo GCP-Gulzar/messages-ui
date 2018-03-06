@@ -15,6 +15,7 @@ def tag="us.gcr.io/gcp-automated-networks-196019/message-ui:${version}"
     stage('dockerize'){
         echo 'dockerizing image...'
         sh "docker build -t ${tag} ."
+        sh "gcloud config set account hemani.gulzar@gmail.com"
         sh "gcloud docker -- push ${tag}"
     }
     stage('deploy'){
