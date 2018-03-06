@@ -6,16 +6,17 @@ pipeline{
          args '-p 3000:3000'
      }
   }
-
-  stage('checkout'){
-    echo 'Checking out source code...'
-    deleteDir()
-    checkout scm
-  }
-  stage('build'){
-    echo "Building app..."
-    echo "node version : "
-    sh "node -v"
-    sh "ng build --prod"
+  stages{
+    stage('checkout'){
+      echo 'Checking out source code...'
+      deleteDir()
+      checkout scm
+      }
+    stage('build'){
+      echo "Building app..."
+      echo "node version : "
+      sh "node -v"
+      sh "ng build --prod"
+    }
   }
 }
