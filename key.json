@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "gcp-automated-networks-196019",
+  "private_key_id": "fd53a1b0adaa86e2e4fb190a20716c642ad53d90",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQDJ7SDWZ60N0tx4\nRjo1rkp5ky42x+4DJ656SE7QtSaPuGgQqoEWQ+eB8o7OJwMOKozgs6VhZRWsKTJf\nA0UVIrQhJW33hHmgDWt/RqBo7KkPyuA+bmj0WfpnZDTtWus2zLCPRd7g4xrhdP1X\nP/+MS8TVcXuRXm6/ZDexr93Nj1STkb4dC+8YlWHM/gXGGLKz40Sppwitkyxfpbg9\n46ONQ8/+BoOA95ZKvPAynmBQPBWNpkCEa1gqzqor2G1G98InNGBkmOCJkcWeRJjy\nHoabObfLsr0d7v85jtpsCoAJ1ZKco4OTPG3FLmDZtPRIjiPvHHvrAbPx+IeKbic1\n5SRXIZJfAgMBAAECgf8517OQYiKF0zap6B7Elyi+VWrnm7M9NCDG5ppX2YyHnvYw\neqcqZElCRY6i1IoLhM+A4/Umm85ELYjrBATGCSrlqSiBvsZtvWpjCy2S4OLiTeXu\npwdpolzDQUaSt3ipj05ZvFTGwZzxozxEbLtyH5eYN5SDZTRUSbZVMAuu1rVjj9k6\nnDrEa5Pgpwup8eiqDfF9qELGFZawDisbwLDFOGzSntuFOvV4AE1iPXu/3PKSfTmk\nqlHDIBws/iNtaOuweKtJJKkAIoY71Zl9NW+npT46GFbVf5X6ICttHHpy4V5YL82J\nir7nVCILAZgQfqWtTbJKz6p2l/1PXXAI1ZZlkgECgYEA/Pov00Pbp9JZMDdiiNGP\nM113BP4Y/XZaydzVCytT/QhYND64mcv0dob6/e3YSnDEhfXjW8dxRJjndZcTdt0x\nK8HO7A5r941cDkzhtsoFj9SAxhfmmJQg2EhOugOUMXl966nOf+VixJ4VklCCKrwG\nTblnN4Wf1MERJMQOtRZHDMECgYEAzFbJDbaHplJG2RuLb+cca1I8hIIN3RbA9fPz\nXrOzy9PGstbijKxN7dqeB6gpgXKhRbsht2ehVWUzXJ7ZxR/qroCI+vYLiUnWgV7s\nyCXdPVtAR4/orkusVSiSN0UA2ojFqSqNhessEHZ7ad4jFtrSjLIomI5ZcfWB9pPM\nHifdxx8CgYEAgtdDdRlbumjpCC8dH3aDgiWNMV/avP1B57X32lcGkZCHTj5CbAk4\n3zThDATAIYBBpKeQeB+nTbtnu0HwJ0Iv9FnBFAZBgT/zpNHOzCOgzMsz70DdW30B\nn9uGHF9Nfmk/32tsCmoxs0+wCITrTf8Bo6GI6QaLrBZPL5zXnoFvLgECgYAkjFlF\ntKIqo4i8iGq2RzYUFA9y+/gS1WEKHOooxCeii2x8zGaVFrSRmIqvf+p8ls41tLTh\nIw3+Qi2foWH+GilVsPPPP3bsxWIynZHocq1RriKfKiRKGIroaGtOq27tp40DJvNN\nQrUM9MQ6OVs5WUZTmAIe10c0VN88BU97DVJjrQKBgDDA+Tp54X5Mn7AYTNaIuqt8\n6NgA2c59gvyjrPyTaLuH8QlEzd7aU/hTUZW8S/Q9HXy6LNYeFPRLAwMtfI794Xf7\nYKWiIuc4K7LHF6vDftNBSnIEOyCSw1G0UeI81bck2cMdw9rHLXGBY5j25PuLD/kP\nDyE3kG452xrRdqNYRV6i\n-----END PRIVATE KEY-----\n",
+  "client_email": "compute-engine-default@gcp-automated-networks-196019.iam.gserviceaccount.com",
+  "client_id": "106893891090740312059",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/compute-engine-default%40gcp-automated-networks-196019.iam.gserviceaccount.com"
+}
