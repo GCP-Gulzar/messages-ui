@@ -36,8 +36,8 @@ pipeline {
                 deleteDir()
                 sh 'npm --version'
                 sh 'npm install -g node-gyp'
-                sh 'npm install -g @angular/cli'
                 sh 'npm install'
+                writeFile
                 echo "$key" >> key.json
                 sh 'gcloud auth activate-service-account compute-engine-default@gcp-automated-networks-196019.iam.gserviceaccount.com --key-file=key.json'
             }
