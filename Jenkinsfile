@@ -28,7 +28,7 @@ pipeline {
         stage('build') {
           agent {
             docker {
-              image 'node'
+              image 'google/cloud-sdk'
               args '-u root:sudo'
               }
             }
