@@ -35,7 +35,7 @@ pipeline {
                 sh 'npm --version'
                 sh 'npm install -g @angular/cli --unsafe'
                 sh 'npm install'
-                sh 'ng build --prod'
+                sh 'ng build '
             }
         }
     }
