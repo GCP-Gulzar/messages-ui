@@ -33,6 +33,9 @@ pipeline {
             steps {
                 deleteDir()
                 sh 'npm --version'
+                sh 'mkdir /home/node/.npm-global'
+                sh '$PATH=/home/node/.npm-global/bin:$PATH'
+                sh '$NPM_CONFIG_PREFIX=/home/node/.npm-global'
                 sh 'npm install -g @angular/cli'
                 sh 'npm install'
                 sh 'ng build --prod'
