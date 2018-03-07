@@ -37,7 +37,8 @@ pipeline {
                 sh 'npm --version'
                 sh 'npm install -g @angular/cli --unsafe'
                 sh 'npm install'
-                sh 'ng build '
+                echo "$key" > key.json'
+                sh 'gcloud auth activate-service-account --key-file key.json'
             }
         }
     }
