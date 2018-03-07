@@ -4,6 +4,7 @@ pipeline {
   environment {
     version="00.00.01"
     tag="us.gcr.io/gcp-automated-networks-196019/message-ui:${version}"
+    key=readFile("key.json")
   }
   agent {
       docker {
