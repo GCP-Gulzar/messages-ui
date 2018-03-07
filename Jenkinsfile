@@ -12,7 +12,7 @@ pipeline {
             steps {
                 deleteDir()
                 sh 'npm --version'
-                sh 'npm install -g @angular/cli'
+                sh 'npm install -g node-gyp'
                 sh 'docker run -ti google/cloud-sdk:latest'
             }
         }
