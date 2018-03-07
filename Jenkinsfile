@@ -21,9 +21,16 @@ pipeline {
           }
           steps {
             deleteDir()
+            sh 'gcloud docker -- push ${tag}'
           }
         }
         stage('build') {
+          agent {
+            docker {
+              image 'node'
+              args '-u root:sudo'
+              }
+            }
             steps {
                 deleteDir()
                 sh 'npm --version'
