@@ -33,8 +33,8 @@ pipeline {
             steps {
                 deleteDir()
                 sh 'npm --version'
-                sh 'npm install -g @angular/cli'
                 sh 'npm install -g node-gyp'
+                sh 'npm install'
                 sh 'ng build --prod'
             }
         }
