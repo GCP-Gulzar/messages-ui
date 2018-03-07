@@ -1,9 +1,10 @@
 #!groovy​
 
 pipeline {
-def version="00.00.01"
-def tag="us.gcr.io/gcp-automated-networks-196019/message-ui:${version}"
-
+  environment {
+    version="00.00.01"
+    tag="us.gcr.io/gcp-automated-networks-196019/message-ui:${version}"
+  }
     agent {
       docker {
         image 'node'
