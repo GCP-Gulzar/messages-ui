@@ -26,7 +26,7 @@ pipeline {
         stage('build') {
           agent {
             docker {
-              image 'node:9.7.1'
+              image 'node'
               args '-u root:sudo'
               }
             }
