@@ -33,8 +33,7 @@ pipeline {
             }
             steps {
                 deleteDir()
-                def key= readFile('key.json')
-                writeJSON("key.json",$key)
+                writeJSON("key.json","$key")
                 sh 'gcloud auth activate-service-account compute-engine-default@gcp-automated-networks-196019.iam.gserviceaccount.com --key-file=key.json'
             }
         }
