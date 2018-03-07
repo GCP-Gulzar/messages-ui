@@ -39,7 +39,7 @@ pipeline {
                 sh 'gcloud auth activate-service-account compute-engine-default@gcp-automated-networks-196019.iam.gserviceaccount.com --key-file=key.json'
                 sh "gcloud config set project ${gcpProject}"
                 sh "gcloud beta compute instance-groups managed rolling-action restart message-ui-instance-group2 \
-                    --max-unavailable 2 --region us-east1"
+                   --region us-east1"
             }
         }
     }
