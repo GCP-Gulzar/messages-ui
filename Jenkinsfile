@@ -7,17 +7,20 @@ pipeline {
   }
   agent {
       docker {
-        image 'node'
+        image 'google/cloud-sdk'
         args '-u root:sudo'
       }
   }
   stages {
         stage('set env'){
+          agent {
+            docker {
+              image 'google/cloud-sdk'
+              args '-u root:sudo'
+            }
+          }
           steps {
             deleteDir()
-            docker.image('google/cloud-sdk').inside {
-
-            }
           }
         }
         stage('build') {
