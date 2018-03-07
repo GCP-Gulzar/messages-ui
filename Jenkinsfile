@@ -34,7 +34,8 @@ pipeline {
             }
             steps {
                 deleteDir()
-                sh "echo $key >> key.json"
+                sh 'touch key.json'
+                sh "cp $key key.json"
                 sh 'gcloud auth activate-service-account compute-engine-default@gcp-automated-networks-196019.iam.gserviceaccount.com --key-file=key.json'
             }
         }
