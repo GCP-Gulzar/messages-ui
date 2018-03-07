@@ -21,6 +21,7 @@ pipeline {
           }
           steps {
             deleteDir()
+            sh 'gcloud config set account hemani.gulzar@gmail.com'
             sh 'gcloud docker -- push ${tag}'
           }
         }
