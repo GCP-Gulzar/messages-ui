@@ -26,14 +26,14 @@ pipeline {
         stage('build') {
           agent {
             docker {
-              image 'node'
+              image 'node:9.7.1'
               args '-u root:sudo'
               }
             }
             steps {
                 deleteDir()
                 sh 'npm --version'
-                sh 'npm install -g node-gyp'
+                sh 'npm install -g @angular/cli'
                 sh 'npm install'
                 sh 'ng build --prod'
             }
