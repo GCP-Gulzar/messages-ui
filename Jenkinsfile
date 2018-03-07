@@ -1,7 +1,12 @@
 #!groovy​
 
 pipeline {
-    agent { docker 'node' }
+    agent {
+      docker {
+        image 'node'
+        args '-u root:sudo
+      }
+    }
     stages {
         stage('build') {
             steps {
@@ -10,7 +15,6 @@ pipeline {
                 sh "mkdir -p ~/.npm-global"
                 sh "npm config set prefix '~/.npm-global'"
                 sh "export PATH=~/.npm-global/bin:$PATH"
-                bash "source ~/.profile"
                 sh 'npm install -g @angular/cli'
                 sh 'docker run -ti google/cloud-sdk:latest'
             }
