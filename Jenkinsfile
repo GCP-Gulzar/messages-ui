@@ -19,6 +19,12 @@ def gcpProject="gcp-automated-networks-196019"
         sh "docker build -t ${tag} ."
     }
     stage('deploy'){
+    agent {
+      docker {
+        image 'google/cloud-sdk'
+        args '-u root:sudo'
+        }
+      }
     writeFile(file:"key.json",text:"$key")
     sh 'gcloud auth activate-service-account compute-engine-default@gcp-automated-networks-196019.iam.gserviceaccount.com --key-file=key.json'
     sh "gcloud config set project ${gcpProject}"
