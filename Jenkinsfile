@@ -1,45 +1,28 @@
-#!groovy​
+node{
+def version="00.00.01"
+def tag="us.gcr.io/gcp-automated-networks-196019/message-ui:${version}"
+def key=readFile("key.json")
+def gcpProject="gcp-automated-networks-196019"
 
-pipeline {
-  environment {
-    version="00.00.01"
-    tag="us.gcr.io/gcp-automated-networks-196019/message-ui:${version}"
-    key=readFile("key.json")
-    gcpProject="gcp-automated-networks-196019"
-  }
-  agent {
-      docker {
-        image 'google/cloud-sdk'
-        args '-u root:sudo'
-      }
-  }
-  stages {
-        stage('set env'){
-          agent {
-            docker {
-              image 'google/cloud-sdk'
-              args '-u root:sudo'
-            }
-          }
-          steps {
-            deleteDir()
-            checkout scm
-          }
-        }
-        stage('build') {
-          agent {
-            docker {
-              image 'google/cloud-sdk'
-              args '-u root:sudo'
-              }
-            }
-            steps {
-                writeFile(file:"key.json",text:"$key")
-                sh 'gcloud auth activate-service-account compute-engine-default@gcp-automated-networks-196019.iam.gserviceaccount.com --key-file=key.json'
-                sh "gcloud config set project ${gcpProject}"
-                sh "gcloud beta compute instance-groups managed rolling-action restart message-ui-instance-group2 \
-                   --region us-east1"
-            }
-        }
+    stage('checkout'){
+        echo 'Checking out source code...'
+        checkout scm
+    }
+    stage('build'){
+        echo "Building app..."
+        echo "node version : "
+        sh 'npm install'
+        sh 'ng build --prod'
+    }
+    stage('dockerize'){
+        echo 'dockerizing image...'
+        sh "docker build -t ${tag} ."
+    }
+    stage('deploy'){
+    writeFile(file:"key.json",text:"$key")
+    sh 'gcloud auth activate-service-account compute-engine-default@gcp-automated-networks-196019.iam.gserviceaccount.com --key-file=key.json'
+    sh "gcloud config set project ${gcpProject}"
+    sh "gcloud beta compute instance-groups managed rolling-action restart message-ui-instance-group2 \
+       --region us-east1"
     }
 }
